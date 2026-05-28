@@ -714,6 +714,45 @@ ul {
     gap: 1rem;
 }
 
+/* Clickable Project Card */
+.clickable-card {
+    cursor: pointer;
+}
+
+/* Under Development Button */
+.btn-under-dev {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    background: rgba(255, 215, 0, 0.03);
+    color: var(--gold-accent);
+    border: 1px dashed var(--gold-accent);
+    cursor: not-allowed;
+    transition: var(--transition);
+}
+
+.btn-under-dev i {
+    animation: spin-slow 6s linear infinite;
+}
+
+[data-theme="light"] .btn-under-dev {
+    background: rgba(184, 134, 11, 0.05); /* Dark Goldenrod for better contrast */
+    color: #B8860B;
+    border-color: #B8860B;
+}
+
+@keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 /* --- Paper Presentation Highlight --- */
 .highlight-card {
     background: var(--bg-surface);

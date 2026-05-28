@@ -145,4 +145,19 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // Make project cards clickable if they have a data-url attribute
+    const clickableCards = document.querySelectorAll('.clickable-card');
+    clickableCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Check if the user clicked on a button or link within the card
+            if (e.target.closest('.project-links') || e.target.closest('a')) {
+                return; // Let the link or button handle the click
+            }
+            const url = card.getAttribute('data-url');
+            if (url) {
+                window.open(url, '_blank');
+            }
+        });
+    });
+
 });
